@@ -1,0 +1,20 @@
+/dts-v1/;
+
+/ {
+	compatible = "qcom,sdm636-mtp", "qcom,sdm636", "qcom,mtp";
+	model = "Qualcomm Technologies, Inc. SDM 636 PM660 + PM660L MTP";
+	qcom,board-id = <0x8 0x0>;
+	qcom,pmic-id = <0x1001b 0x101011a 0x0 0x0 0x1001b 0x201011a 0x0 0x0 0x1001b 0x102001a 0x0 0x0>;
+
+	__fixups__ {
+		tavil_snd = "/fragment@0:target:0";
+	};
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			qcom,msm-mbhc-moist-cfg = <0x0 0x0 0x3>;
+		};
+	};
+};

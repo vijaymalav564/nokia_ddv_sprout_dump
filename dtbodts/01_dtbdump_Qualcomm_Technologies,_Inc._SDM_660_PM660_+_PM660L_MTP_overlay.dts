@@ -1,0 +1,19 @@
+/dts-v1/;
+
+/ {
+	compatible = "qcom,sdm660-mtp", "qcom,sdm660", "qcom,mtp";
+	model = "Qualcomm Technologies, Inc. SDM 660 PM660 + PM660L MTP overlay";
+	qcom,board-id = <0x8 0x0>;
+	qcom,pmic-id = <0x1001b 0x101011a 0x0 0x0 0x1001b 0x201011a 0x0 0x0 0x1001b 0x102001a 0x0 0x0>;
+
+	__fixups__ {
+		slim_aud = "/fragment@0:target:0";
+	};
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+		};
+	};
+};
